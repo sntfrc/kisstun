@@ -26,8 +26,13 @@ win:
 	rm -r build/kisstun.bat build/dist
 
 mac:
-	mkdir -p build/tmp
-	touch build/a
+	mkdir -p build/
+	osacompile -o build/KissTUN.app kisstun.applescript
+	rm -rf build/KissTUN-$(VERSION)-macos.app 
+	mv build/KissTUN.app build/KissTUN-$(VERSION)-macos.app
+	mkdir -p build/KissTUN-$(VERSION)-macos.app/Contents/MacOS
+	mkdir -p build/KissTUN-$(VERSION)-macos.app/Contents/Resources
+	cp -a kisstun.py build/KissTUN-$(VERSION)-macos.app/Contents/Resources
 
 clean:
 	rm -rf build/
