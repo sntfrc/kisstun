@@ -26,13 +26,13 @@ win:
 	rm -r build/kisstun.bat build/dist
 
 mac:
-	rm -rf build/tmp/KissTUN.app build/tmp/mac
+	rm -rf build/tmp/kissTUN.app build/tmp/mac
 	mkdir -p build/tmp/mac
-	osacompile -o build/tmp/mac/KissTUN.app kisstun.scpt
-	mkdir -p build/tmp/mac/KissTUN.app/Contents/MacOS
-	mkdir -p build/tmp/mac/KissTUN.app/Contents/Resources
-	cp -a kisstun.py build/tmp/mac/KissTUN.app/Contents/Resources
-	diskutil image create from --volumeName "KissTUN v$(VERSION)" --format UDZO build/tmp/mac build/kisstun-$(VERSION)-macos.dmg
+	osacompile -o build/tmp/mac/kissTUN.app kisstun.scpt
+	mkdir -p build/tmp/mac/kissTUN.app/Contents/MacOS
+	mkdir -p build/tmp/mac/kissTUN.app/Contents/Resources
+	cp -a kisstun.py build/tmp/mac/kissTUN.app/Contents/Resources
+	diskutil image create from --volumeName "kissTUN v$(VERSION)" --format UDZO build/tmp/mac build/kisstun-$(VERSION)-macos.dmg
 
 clean:
 	rm -rf build/
