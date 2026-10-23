@@ -1,13 +1,13 @@
 VERSION = 0.1
 
-all: linux
+all: unix
 
-release: linux win mac
+release: unix win mac
 
-linux:
+unix:
 	mkdir -p build/tmp
-	cp kisstun.py build/kisstun-$(VERSION)-linux
-	chmod a+x build/kisstun-$(VERSION)-linux
+	cp kisstun.py build/kisstun-$(VERSION)
+	chmod a+x build/kisstun-$(VERSION)
 
 install: linux
 	sudo install -m 755 build/kisstun-$(VERSION)-linux /usr/local/bin/kisstun
@@ -28,7 +28,7 @@ win:
 mac:
 	rm -rf build/tmp/KissTUN.app build/tmp/mac
 	mkdir -p build/tmp/mac
-	osacompile -o build/tmp/mac/KissTUN.app kisstun.applescript
+	osacompile -o build/tmp/mac/KissTUN.app kisstun.scpt
 	mkdir -p build/tmp/mac/KissTUN.app/Contents/MacOS
 	mkdir -p build/tmp/mac/KissTUN.app/Contents/Resources
 	cp -a kisstun.py build/tmp/mac/KissTUN.app/Contents/Resources
