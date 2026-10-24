@@ -32,6 +32,7 @@ mac:
 	mkdir -p build/tmp/mac/kissTUN.app/Contents/MacOS
 	mkdir -p build/tmp/mac/kissTUN.app/Contents/Resources
 	cp -a kisstun.py build/tmp/mac/kissTUN.app/Contents/Resources
+	codesign --force --sign "$$(security find-identity -v -p codesigning | head -n1 | cut -d\" -f2)" build/tmp/mac/kissTun.app || true
 	diskutil image create from --volumeName "kissTUN v$(VERSION)" --format UDZO build/tmp/mac build/kisstun-$(VERSION)-macos.dmg
 
 clean:
