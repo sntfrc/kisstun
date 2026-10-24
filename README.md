@@ -89,3 +89,9 @@ Note on devices:
 - If you see a warning message that IPv6 could not be disabled, it probably means that it already is (this happens by default on macOS for example). No need to worry.
 
 Stop a running session with `Ctrl+C` in its terminal.
+
+## Acknowledgements
+
+This project would never have been possible without the excellent work of:
+* [Dire Wolf](https://github.com/wb2osz/direwolf)
+* [Wintun](https://git.zx2c4.com/wintun)
